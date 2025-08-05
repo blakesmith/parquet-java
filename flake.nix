@@ -12,12 +12,24 @@
     flake-utils.lib.eachDefaultSystem (system:
       let
         pkgs = import nixpkgs { inherit system; };
+        thrift_0_21_0 = pkgs.thrift.overrideAttrs (old: let version = "0.21.0"; in {
+          inherit version;
+          src = pkgs.fetchFromGitHub {
+            owner = "apache";
+            repo = "thrift";
+            tag = "v${version}";
+            hash = "sha256-OF/pFG8OXROsyYGf6jgfVTYTrTc8UB5QJh4gbostFfU=";
+          };
+          doCheck = false;
+          patches = [];
+          postPatch = "";
+        });
       in
       {
         devShells = with pkgs; {
           default = mkShell {
             buildInputs = [
-              thrift
+              thrift_0_21_0
               protobuf
               maven
               jdk8

@@ -508,6 +508,9 @@
             <exclude>thrift-${thrift.version}.tar.gz</exclude>
             <exclude>**/dependency-reduced-pom.xml</exclude>
             <exclude>**/*.rej</exclude>
+            <exclude>**/*.nix</exclude>
+            <exclude>**/*.lock</exclude>
+            <exclude>**/stats</exclude>
           </excludes>
         </configuration>
       </plugin>
