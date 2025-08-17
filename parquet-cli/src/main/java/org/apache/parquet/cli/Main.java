@@ -39,8 +39,6 @@ import org.apache.parquet.cli.commands.CatCommand;
 import org.apache.parquet.cli.commands.CheckParquet251Command;
 import org.apache.parquet.cli.commands.ColumnMaskingCommand;
 import org.apache.parquet.cli.commands.ColumnSizeCommand;
-import org.apache.parquet.cli.commands.ConvertCSVCommand;
-import org.apache.parquet.cli.commands.ConvertCommand;
 import org.apache.parquet.cli.commands.ParquetMetadataCommand;
 import org.apache.parquet.cli.commands.PruneColumnsCommand;
 import org.apache.parquet.cli.commands.RewriteCommand;
@@ -95,8 +93,6 @@ public class Main extends Configured implements Tool {
     jc.addCommand("check-stats", new CheckParquet251Command(console));
     jc.addCommand("schema", new SchemaCommand(console));
     jc.addCommand("csv-schema", new CSVSchemaCommand(console));
-    jc.addCommand("convert-csv", new ConvertCSVCommand(console));
-    jc.addCommand("convert", new ConvertCommand(console));
     jc.addCommand("to-avro", new ToAvroCommand(console));
     jc.addCommand("cat", new CatCommand(console, 0));
     jc.addCommand("head", new CatCommand(console, 10));

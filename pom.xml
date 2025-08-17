@@ -153,7 +153,7 @@
     <module>parquet-hadoop</module>
     <module>parquet-jackson</module>
     <module>parquet-protobuf</module>
-    <module>parquet-thrift</module>
+    <!-- <module>parquet-thrift</module> -->
     <module>parquet-hadoop-bundle</module>
     <module>parquet-variant</module>
   </modules>
